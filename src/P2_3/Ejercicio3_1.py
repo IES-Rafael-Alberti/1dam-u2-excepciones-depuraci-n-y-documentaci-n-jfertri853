@@ -1,4 +1,12 @@
-def contar_edad(edad=1) -> str:
+def contar_edad(edad: int = 1) -> str:
+    """Count each year from 1 to your current age
+
+    Args:
+        edad (int): Your current age which is 1 if no value given
+
+    Returns:
+        cadena (str): every year from 1 to current age separated by ","
+    """
     cadena = "Has cumplido: "
     for i in range(1, edad + 1):
         if i == edad:
@@ -12,6 +20,12 @@ def contar_edad(edad=1) -> str:
 
 
 def pedir_edad() -> int:
+    """Asks for your current age and returns it or if the value is wrong the age stays = 1
+
+    Returns:
+        edad (int): an int number which is supposed to be your current age
+
+    """
     try:
         edad = int(input("Introduce tu edad: "))
         if edad <= 0:
