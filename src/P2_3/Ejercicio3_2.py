@@ -24,9 +24,9 @@ def pedir_num() -> int:
     """
     while True:
         try:
-            num = int(input("Introduce tu edad: "))
+            num = int(input("Introduce un numero entero positivo: "))
             if num < 1:
-                raise ValueError("La edad no puede ser negativa o 0")
+                raise ValueError("El numero no puede ser menor a 1")
             else:
                 return num
         except ValueError:
