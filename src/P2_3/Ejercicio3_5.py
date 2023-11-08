@@ -9,28 +9,32 @@ def solicitar_password():
 
 
 def comprobar_password(clave_real: str, clave_intento: str) -> bool:
-    """Compares 2 strings and returns if they are equal or not
+    """Compares 2 strings and returns True if they are equal or raises an error if not
 
     Args:
         clave_real (str): Stored password (real one)
         clave_intento (str): The password that the user has inserted to verify with the real one
 
     Returns:
-        (bool): True or False depending on whether the strings match
+        (bool): will always be True
     """
-    try:
-        if clave_real == clave_intento:
-            return True
-        else:
-            raise NameError("Incorrect Password!!")
-    except NameError:
-        print("Incorrect Password!!")
-        return False
+    if clave_real == clave_intento:
+        return True
+    else:
+        raise NameError("Incorrect Password!!")
 
 
 def main():
     clave = "abc123"
-    print(comprobar_password(clave, solicitar_password()))
+    intentoClave = solicitar_password()
+    try:
+        ingresar = comprobar_password(clave, intentoClave)
+        if ingresar:
+            print(ingresar)
+    except NameError as e:
+        print("***ERROR*** - ", e)
+    except Exception:
+        print("***ERROR*** - Desconocido")
 
 
 if __name__ == "__main__":
