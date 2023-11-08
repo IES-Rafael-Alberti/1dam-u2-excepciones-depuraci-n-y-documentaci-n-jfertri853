@@ -5,18 +5,17 @@ def pedir_num_entero():
         num: an inserted integer or None value
     """
     num = input("Introduce un numero entero: ")
-    try:
-        if not str(abs(int(num))).isnumeric():
-            raise ValueError
-        else:
-            return num
-    except ValueError:
-        print("La entrada no es correcta")
-        return None
+    if not str(abs(int(num))).isnumeric():
+        raise ValueError
+    else:
+        return num
 
 
 def main():
-    print(pedir_num_entero())
+    try:
+        print(pedir_num_entero())
+    except ValueError:
+        print("La entrada no es correcta")
 
 
 if __name__ == "__main__":
