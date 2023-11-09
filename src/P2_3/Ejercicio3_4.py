@@ -1,11 +1,11 @@
 def pedir_num_entero(entrada: str):
-    """Asks for an input and returns it or returns None and raises and error if input is not an integer
+    """Verifies if the parameter is numeric and returns it as an integer
 
     Returns:
         num: an inserted integer or None value
     """
-    if not str(abs(int(entrada))).isnumeric():
-        raise ValueError
+    if not entrada.isnumeric():
+        raise ValueError("La entrada no es correcta")
 
     return int(entrada)
 
@@ -14,8 +14,8 @@ def main():
     entrada = input("Introduce un numero entero: ")
     try:
         print(pedir_num_entero(entrada))
-    except ValueError:
-        print("La entrada no es correcta")
+    except ValueError as e:
+        print("***ERROR*** -", e)
 
 
 if __name__ == "__main__":

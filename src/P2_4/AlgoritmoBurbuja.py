@@ -1,5 +1,13 @@
 # Too easy
 def ordenar_lista(lista: list) -> list:
+    """Orders a list from lowest to highest
+
+    Args:
+        lista (list): A list composed by any type and any amount of values
+
+    Returns:
+        lista (list): lista but modified to be ordered from lowest to highest
+    """
     total = len(lista) - 1
     intercambios = None
     contador = 0
@@ -20,6 +28,14 @@ def ordenar_lista(lista: list) -> list:
 
 
 def mostrar_lista(lista: list) -> str:
+    """Converts a list to a string in a format where values are separated by ","
+
+    Args:
+        lista (list): The list to convert to string and then format
+
+    Returns:
+        cadena (str): a string composed of the list elements separated by ", "
+    """
     cadena = ""
     for i in range(0, len(lista)):
         if i == len(lista) - 1:
@@ -30,6 +46,13 @@ def mostrar_lista(lista: list) -> str:
 
 
 def continuar():
+    """Asks a yes or no question and returns True or False respectively
+
+    Returns:
+        True: when the input is "S" or "s"
+        False: when the input is "N" or "n"
+
+    """
     comando = input("Quieres introducir otro numero? (s/n): ").upper()
     if comando == "S":
         return True
@@ -40,11 +63,22 @@ def continuar():
 
 
 def pedir_num() -> int:
+    """Ask the user to input a numeric value and returns it as an integer
+
+    Returns:
+        num (int): the inserted numeric value
+    """
     num = int(input("Introduce un numero: "))
     return num
 
 
 def pedir_lista():
+    """Returns a list of values based on user input
+
+    Returns:
+        lista (list): a list containing user inputs
+
+    """
     lista = []
     seguir = True
 
