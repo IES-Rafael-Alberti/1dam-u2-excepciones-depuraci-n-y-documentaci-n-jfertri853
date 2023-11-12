@@ -1,10 +1,9 @@
 import pytest
 from src.P2_4.AlgoritmoBurbuja import (
     ordenar_lista,
-    mostrar_lista,
-    continuar,
-    pedir_num,
+    mostrar_lista
 )
+
 
 @pytest.mark.parametrize(
     "lista, expected",
