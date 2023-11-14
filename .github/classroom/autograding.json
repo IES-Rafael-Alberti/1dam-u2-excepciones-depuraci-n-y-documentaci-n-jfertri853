@@ -3,7 +3,7 @@
     {
       "name": "Pruebas unitarias básicas",
       "setup": "sudo -H pip3 install pytest",
-      "run": "pytest -v .\\tests",
+      "run": "pytest -v ./tests",
       "input": "",
       "output": "",
       "comparison": "exact",
